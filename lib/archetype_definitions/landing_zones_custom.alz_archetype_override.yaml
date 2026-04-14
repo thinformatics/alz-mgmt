@@ -1,15 +1,6 @@
 base_archetype: landing_zones
 name: landing_zones_custom
-
-policy_assignments_to_add:
-  - name: allowed-locations
-    display_name: Allowed locations - Germany West Central
-    policy_definition_id: /providers/Microsoft.Authorization/policyDefinitions/e56962a6-4747-49cd-b67b-bf8b01975c4c
-    parameters:
-      listOfAllowedLocations:
-        value:
-          - germanywestcentral
-
+policy_assignments_to_add:[]
 policy_assignments_to_remove:
   # To remove AMA policies, uncomment the following lines:
   # - Deploy-MDFC-DefSQL-AMA
@@ -21,7 +12,6 @@ policy_assignments_to_remove:
   # - Deploy-VMSS-Monitoring
   # To remove the DDOS modify policy, uncomment the following line:
   # - Enable-DDoS-VNET
-
 policy_definitions_to_add: []
 policy_definitions_to_remove: []
 policy_set_definitions_to_add: []
