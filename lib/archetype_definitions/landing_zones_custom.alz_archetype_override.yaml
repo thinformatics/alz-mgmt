@@ -1,15 +1,8 @@
 base_archetype: landing_zones
 name: landing_zones_custom
-
 policy_assignments_to_add:
-  - name: allowed-locations
-    display_name: Allowed locations - Germany West Central
-    policy_definition_id: /providers/Microsoft.Authorization/policyDefinitions/e56962a6-4747-49cd-b67b-bf8b01975c4c
-    parameters:
-      listOfAllowedLocations:
-        value:
-          - germanywestcentral
-
+  - allowed-locations-germany
+  
 policy_assignments_to_remove:
   # To remove AMA policies, uncomment the following lines:
   # - Deploy-MDFC-DefSQL-AMA
