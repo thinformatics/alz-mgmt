@@ -1,6 +1,14 @@
 base_archetype: landing_zones
 name: landing_zones_custom
-policy_assignments_to_add: []
+policy_assignments_to_add: [
+- name: enforce-rg-location-match
+    display_name: Resource Group and Resource locations should match (Germany West Central)
+    policy_definition_id: /providers/Microsoft.Authorization/policyDefinitions/6c0a1e3e-3a04-4f6d-8dcb-78d4e4e6f2d2
+    parameters:
+      listOfAllowedLocations:
+        value:
+          - germanywestcentral
+]
 policy_assignments_to_remove: [
 # To remove AMA policies, uncomment the following lines:
   # Deploy-MDFC-DefSQL-AMA,
