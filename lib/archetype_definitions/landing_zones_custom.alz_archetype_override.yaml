@@ -1,7 +1,7 @@
 base_archetype: landing_zones
 name: landing_zones_custom
-policy_assignments_to_add:[]
-policy_assignments_to_remove:
+policy_assignments_to_add: []
+policy_assignments_to_remove: []
   # To remove AMA policies, uncomment the following lines:
   # - Deploy-MDFC-DefSQL-AMA
   # - Deploy-VM-ChangeTrack
