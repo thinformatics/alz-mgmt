@@ -26,18 +26,6 @@ module "management_groups" {
   telemetry_additional_content                                     = var.telemetry_additional_content
 }
 
-resource "azurerm_management_group_policy_assignment" "enforce_location" {
-  name                 = "enforce-location-germanywestcentral"
-  display_name         = "Enforce Location to Germany West Central"
-  management_group_id  = "mg-teamaztf"
-  policy_definition_id = "${azurerm_policy_definition.enforce_location.id}"
-  description          = "Assigns the enforce location policy to ensure resources are deployed in Germany West Central."
-
-  parameters = <<PARAMETERS
-    {}
-  PARAMETERS
-}
-
 moved {
   from = module.management_groups[0].module.management_groups
   to   = module.management_groups[0]
