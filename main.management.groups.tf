@@ -40,4 +40,3 @@ resource "azurerm_management_group_policy_assignment" "allowed_locations" {
     }
   })
 }
-}
