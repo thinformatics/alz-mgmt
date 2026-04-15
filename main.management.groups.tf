@@ -25,18 +25,3 @@ module "management_groups" {
   policy_role_assignments_dependencies                             = local.management_group_dependencies
   telemetry_additional_content                                     = var.telemetry_additional_content
 }
-
-# Enforce Germany West Central as the only allowed location using the built-in Azure Policy
-resource "azurerm_management_group_policy_assignment" "allowed_locations" {
-  name                 = "allowed-locs-gwc"
-  display_name         = "Allowed locations - Germany West Central"
-  management_group_id  = "/providers/Microsoft.Management/managementGroups/mg-teamaztf"
-  policy_definition_id = "/providers/Microsoft.Authorization/policyDefinitions/e56962a6-4747-49cd-b67b-bf8b01975c4c"
-  description          = "Enforces that resources can only be deployed to Germany West Central region"
-
-  parameters = jsonencode({
-    listOfAllowedLocations = {
-      value = ["germanywestcentral"]
-    }
-  })
-}
