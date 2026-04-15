@@ -42,3 +42,18 @@ moved {
   from = module.management_groups[0].module.management_groups
   to   = module.management_groups[0]
 }
+
+# Apply the built-in "Allowed locations" policy to enforce Germany West Central
+resource "azurerm_management_group_policy_assignment" "allowed_locations" {
+  name                 = "allowed-locations-germanywestcentral"
+  display_name         = "Allowed locations - Germany West Central"
+  management_group_id  = "/providers/Microsoft.Management/managementGroups/mg-teamaztf"
+  policy_definition_id = "/providers/Microsoft.Authorization/policyDefinitions/e56962a6-4747-49cd-b67b-bf8b01975c4c"
+  description          = "This policy assignment restricts resource deployments to Germany West Central only."
+
+  parameters = jsonencode({
+    listOfAllowedLocations = {
+      value = ["germanywestcentral"]
+    }
+  })
+}
